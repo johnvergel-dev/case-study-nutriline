@@ -21,45 +21,37 @@ Nutriline Corp needed to go from no real web presence to a credible, fast, **sel
 ## The client & the brief
 Nutriline Corp is an Ecuadorian manufacturer specialised in **precision poultry nutrition**. Their catalog covers the inputs feed mills and poultry farms use to optimise broiler and layer performance: **amino acids** (L-Lysine, L-Threonine), **choline chloride**, **monocalcium phosphate**, **minerals & vitamins**, **additives** and **custom premixes**.
 
-Their customers are **B2B** — feed producers, distributors and farms — so the site has to do four jobs at once:
-1. **Build trust** with a professional, certified-looking presence (the industry runs on credibility and certifications like GMP).
-2. **Showcase the catalog** with real technical detail per product.
-3. **Be found** — rank for poultry-nutrition searches and be citable by AI assistants.
-4. **Be self-served** — the team adds/edits products and reads leads without a developer.
+Their customers are **B2B** — feed producers, distributors and farms — so the site has to build trust with a certified-looking presence, showcase the catalog with real technical detail, rank in search (and be citable by AI assistants), and let the team manage products and leads **without a developer**.
 
 ## What the site includes
-A single Next.js application serves both a public website and a private admin panel from one deployment.
+A single Next.js application serves a **public website** and a **private admin panel** from one deployment: a marketing home, a filterable product catalog with per-product SSR pages, a technical resources library, an about page with the company's certifications and supplier alliances, legal pages, and an authenticated `/admin` dashboard for product / resource / contact management.
 
-### Public site
-- **Home** — brand hero ("Nutrición y Bienestar Avícola"), value pillars (certified technology, sustainable processes, national coverage), featured products and a "Hablemos de tu Proyecto" contact funnel.
-- **Products** — a catalog filterable by category (**Supplements & Additives · Minerals & Vitamins · Premixes · Raw materials**). Each product has its own **server-rendered detail page** (`/products/[slug]`) with a technical sheet, benefits and price. Lines live on the site today include:
+## A tour of the site
 
-  | Product | Category | Price |
-  |---|---|---|
-  | L-Lysine HCl 98.5% | Amino acid | $50 |
-  | Choline Chloride 60% (plant-based) | Additive | $28 |
-  | L-Threonine 98.5% | Amino acid | $50 |
-  | Monocalcium Phosphate 22.7% (Greenphos) | Mineral | $32.50 |
-- **Resources** — a technical library of articles for poultry producers (a long-term SEO engine).
-- **About / Contact** — company information and a rate-limited contact form that lands leads in the admin inbox.
+### 📦 Product catalog
+Filterable by category — each product (L-Lysine, Choline Chloride, L-Threonine, Monocalcium Phosphate…) has its own server-rendered detail page with a technical sheet and price.
 
-### Admin panel (`/admin`)
-An authenticated dashboard so the Nutriline team runs the site themselves:
-- Create / edit / activate products — new products appear instantly, no rebuild.
-- Manage the technical resources library.
-- Read and triage messages from the contact form.
+<p align="center"><img src="docs/products.jpg" alt="Product catalog" width="660"></p>
 
-## Screenshots
+### 🤝 Strategic suppliers & alliances
+World-class partners — **BASF, Cargill, AMUCO** (China), **Platinum** (USA) and **Baffeed** (Turkey) — each shown with origin and partnership history.
 
-**Product catalog** — filterable by category, each item with its own detail page:
+<p align="center"><img src="docs/suppliers.jpg" alt="Strategic suppliers" width="820"></p>
 
-<p align="center"><img src="docs/products.jpg" alt="Nutriline product catalog" width="760"></p>
+### 🏢 About & certifications
+Company strengths, mission / vision / values, and quality certifications — **ISO 9001 · GMP · HACCP**.
 
-<details>
-<summary><b>📄 Full homepage</b> — click to expand the whole scroll</summary>
-<br/>
-<p align="center"><img src="docs/full.jpg" alt="Nutriline full homepage" width="760"></p>
-</details>
+<p align="center"><img src="docs/about.jpg" alt="About Nutriline" width="640"></p>
+
+### 📚 Technical resources
+A growing library of educational articles for poultry producers — the site's long-term SEO engine.
+
+<p align="center"><img src="docs/resources.jpg" alt="Technical resources" width="660"></p>
+
+### 📄 Terms of service
+A complete legal terms & conditions page.
+
+<p align="center"><img src="docs/terms.jpg" alt="Terms of service" width="600"></p>
 
 ## The challenge
 The site runs on **shared hosting** (no Next.js image optimizer, a single Node process via Passenger), and the first version was a client-rendered app behind a ~2.6 s loading screen — so the initial HTML was almost empty, hurting both SEO and perceived speed. It had to become fast and crawlable **without leaving that hosting environment**.
