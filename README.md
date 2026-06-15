@@ -3,7 +3,7 @@
 > **Precision poultry-nutrition company** · corporate website + private admin platform, built end-to-end.
 > 🌐 **Live:** https://nutrilinecorp.com  ·  📍 Ambato, Ecuador
 
-<p align="center"><img src="docs/home.jpg" alt="Nutriline Corp — homepage" width="900"></p>
+<p align="center"><img src="docs/home.jpg" alt="Nutriline Corp — homepage" width="880"></p>
 
 | | |
 |---|---|
@@ -50,10 +50,16 @@ An authenticated dashboard so the Nutriline team runs the site themselves:
 - Read and triage messages from the contact form.
 
 ## Screenshots
-<p align="center">
-  <img src="docs/products.jpg" alt="Product catalog" width="49%">
-  <img src="docs/full.jpg" alt="Full homepage" width="49%">
-</p>
+
+**Product catalog** — filterable by category, each item with its own detail page:
+
+<p align="center"><img src="docs/products.jpg" alt="Nutriline product catalog" width="760"></p>
+
+<details>
+<summary><b>📄 Full homepage</b> — click to expand the whole scroll</summary>
+<br/>
+<p align="center"><img src="docs/full.jpg" alt="Nutriline full homepage" width="760"></p>
+</details>
 
 ## The challenge
 The site runs on **shared hosting** (no Next.js image optimizer, a single Node process via Passenger), and the first version was a client-rendered app behind a ~2.6 s loading screen — so the initial HTML was almost empty, hurting both SEO and perceived speed. It had to become fast and crawlable **without leaving that hosting environment**.
